@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import LocationCard from '../components/LocationCard';
-import Icons from '../components/Icons';
+import Icons from '../components/icons';
 import locationsData from '../data/locationsData';
 import useFavorites from '../hooks/useFavorites';
 
