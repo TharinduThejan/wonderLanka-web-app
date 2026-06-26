@@ -289,7 +289,6 @@ export default function DetailPage() {
             <iframe
               title="Route"
               width="100%" height="100%" frameBorder="0" style={{ border: 0 }}
-              className="filter invert hue-rotate-180 contrast-125 opacity-75"
               src={`https://maps.google.com/maps?saddr=${userLocation.lat},${userLocation.lng}&daddr=${selectedLocation.lat},${selectedLocation.lng}&t=&z=12&ie=UTF-8&iwloc=&output=embed`}
               allowFullScreen
             ></iframe>
@@ -297,7 +296,6 @@ export default function DetailPage() {
             <iframe
               title="Location"
               width="100%" height="100%" frameBorder="0" style={{ border: 0 }}
-              className="filter invert hue-rotate-180 contrast-125 opacity-75"
               src={`https://maps.google.com/maps?q=${selectedLocation.lat},${selectedLocation.lng}&t=&z=12&ie=UTF-8&iwloc=&output=embed`}
               allowFullScreen
             ></iframe>
