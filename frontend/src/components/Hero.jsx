@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Icons from './Icons';
+import Icons from './icons';
 
 export default function Hero({ 
   searchQuery, 

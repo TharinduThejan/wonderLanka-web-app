@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Icons from './Icons';
+import Icons from './icons';
 import { calculateDistance } from '../utils/helpers';
 
 export default function LocationCard({ loc, isFav, userLocation, onToggleFavorite }) {

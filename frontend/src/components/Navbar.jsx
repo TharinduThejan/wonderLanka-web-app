@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Icons from './Icons';
+import Icons from './icons';
 
 export default function Navbar() {
   const navigate = useNavigate();

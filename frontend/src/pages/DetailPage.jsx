@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Icons from '../components/Icons';
+import Icons from '../components/icons';
 import locationsData from '../data/locationsData';
 import useFavorites from '../hooks/useFavorites';
 import useGeolocation from '../hooks/useGeolocation';
