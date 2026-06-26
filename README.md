@@ -1,4 +1,4 @@
-# 🌴 LankaGuide - Local Tour & Travel Web Companion
+# 🌴 WonderLanka - Local Tour & Travel Web Companion
 
 A localized, mobile-first travel companion web application designed to help tourists navigate the beautiful landscapes, historic sites, and premium hotels of Sri Lanka. 
 
