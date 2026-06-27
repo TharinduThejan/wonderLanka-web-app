@@ -12,12 +12,12 @@ export default function Hero({
 }) {
   // Hero Slider Images Array
   const heroImages = [
-    '../../../public/images/Galle.png',
-    '../../../public/images/Ella.png',
-    '../../../public/images/Mirissa.png',
-    '../../../public/images/p1.jpg',
-    '../../../public/images/p2.jpg',
-    '../../../public/images/p3.jpg',
+    '/images/Galle.png',
+    '/images/Ella.png',
+    '/images/Mirissa.png',
+    '/images/p1.jpg',
+    '/images/p2.jpg',
+    '/images/p3.jpg',
 
   ];
   
