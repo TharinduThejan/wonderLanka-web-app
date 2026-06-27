@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import Icons from './icons';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -34,7 +33,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <span 
               onClick={() => navigate('/')}
-              className={`text-sm font-medium pb-1 cursor-pointer transition ${currentPath === '/explore' ? 'text-[#4ADE80] border-b-2 border-[#4ADE80]' : 'text-gray-400 hover:text-white'}`}
+              className={`text-sm font-medium pb-1 cursor-pointer transition ${currentPath === '/' ? 'text-[#4ADE80] border-b-2 border-[#4ADE80]' : 'text-gray-400 hover:text-white'}`}
             >
               Discover
             </span>

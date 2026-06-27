@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Icons from './icons';
+import Icons from './Icons';
 
 export default function Hero({ 
   searchQuery, 
@@ -12,10 +12,13 @@ export default function Hero({
 }) {
   // Hero Slider Images Array
   const heroImages = [
-    '../../../public/images/Sigiriya Hero4.jpg',
     '../../../public/images/Galle.png',
     '../../../public/images/Ella.png',
     '../../../public/images/Mirissa.png',
+    '../../../public/images/p1.jpg',
+    '../../../public/images/p2.jpg',
+    '../../../public/images/p3.jpg',
+
   ];
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);

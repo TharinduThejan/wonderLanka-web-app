@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Icons from '../components/icons';
+import Icons from '../components/Icons';
 import locationsData from '../data/locationsData';
 import useFavorites from '../hooks/useFavorites';
 import useGeolocation from '../hooks/useGeolocation';
@@ -64,10 +64,7 @@ export default function DetailPage() {
   // Combine main image and gallery for the grid
   const galleryImages = [
     selectedLocation.img, 
-    ...(selectedLocation.gallery || [
-      'https://images.unsplash.com/photo-1621245648083-d9cc3dc49c5a?w=800&q=80',
-      'https://images.unsplash.com/photo-1590005085440-1a6bc31de7e6?w=800&q=80'
-    ])
+    ...(selectedLocation.gallery)
   ];
 
   return (
@@ -123,7 +120,6 @@ export default function DetailPage() {
           </p>
         </div>
 
-        {/* Dynamic Widgets: Weather & Distance */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
           {/* Live Weather Section */}
@@ -166,7 +162,7 @@ export default function DetailPage() {
             </div>
           </div>
 
-          {/* Interactive Distance Card */}
+      
           <div className="bg-gradient-to-r from-[#152018] to-[#1E1E1E] border border-[#4ADE80]/20 p-6 rounded-3xl flex flex-col items-start justify-between gap-6 relative overflow-hidden group">
             <div className="absolute right-[-20%] bottom-[-20%] opacity-5 group-hover:opacity-10 transition duration-700">
                <Icons.MapPin className="w-64 h-64 text-[#4ADE80]" />
