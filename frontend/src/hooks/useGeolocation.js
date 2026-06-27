@@ -1,8 +1,5 @@
 import { useState } from 'react';
 
-/**
- * Custom hook to manage user geolocation state.
- */
 export default function useGeolocation() {
   const [userLocation, setUserLocation] = useState(null);
   const [isLocating, setIsLocating] = useState(false);

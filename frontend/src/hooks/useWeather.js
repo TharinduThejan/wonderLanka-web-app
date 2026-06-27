@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 
-/**
- * Custom hook to interact asynchronously with an external REST API (Open-Meteo).
- * Satisfies the assignment's Asynchronous Integration requirement.
- */
+
 export default function useWeather(lat, lng) {
   const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,7 +13,6 @@ export default function useWeather(lat, lng) {
       setIsLoading(true);
       setError(null);
       try {
-        // Asynchronous REST API call using Fetch API
         const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current_weather=true`);
         
         if (!response.ok) {
@@ -26,7 +22,6 @@ export default function useWeather(lat, lng) {
         const data = await response.json();
         
         if (data && data.current_weather) {
-          // Map WMO Weather codes to readable conditions
           let condition = 'Clear';
           const code = data.current_weather.weathercode;
           

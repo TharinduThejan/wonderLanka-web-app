@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import LocationCard from '../components/LocationCard';
 import Hero from '../components/Hero';
-import Icons from '../components/icons';
+import Icons from '../components/Icons';
 import locationsData from '../data/locationsData';
 import useFavorites from '../hooks/useFavorites';
 import useGeolocation from '../hooks/useGeolocation';

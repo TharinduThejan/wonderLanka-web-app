@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import LocationCard from '../components/LocationCard';
-import Icons from '../components/icons';
+import Icons from '../components/Icons';
 import locationsData from '../data/locationsData';
 import useFavorites from '../hooks/useFavorites';
 
@@ -33,7 +33,7 @@ export default function FavoritesPage() {
               Start building your itinerary by clicking the bookmark icon on places you want to visit.
             </p>
             <button 
-              onClick={() => navigate('/explore')}
+              onClick={() => navigate('/')}
               className="bg-[#4ADE80]/20 text-[#4ADE80] hover:bg-[#4ADE80] hover:text-black transition-colors px-6 py-2.5 rounded-full font-medium"
             >
               Explore Destinations
