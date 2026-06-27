@@ -20,29 +20,24 @@ export default function HomePage() {
 
 
 
-  // Pick up ?q= from navbar search
   useEffect(() => {
     const q = searchParams.get('q');
     if (q) {
       setSearchQuery(q);
-      // Scroll to results after a short delay for render
       setTimeout(() => {
         resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 300);
     }
   }, [searchParams]);
 
-  // Filter by category
   const categoryFiltered = filter === 'All' 
     ? locationsData 
     : locationsData.filter(loc => loc.category === filter);
 
-  // Filter by search query
   const trimmedQuery = searchQuery.trim().toLowerCase();
   const filteredLocations = trimmedQuery
     ? categoryFiltered.filter(loc => {
         const searchableText = `${loc.name} ${loc.category} ${loc.tags} ${loc.subtitle} ${loc.description}`.toLowerCase();
-        // Support multi-word search: all words must match
         const words = trimmedQuery.split(/\s+/);
         return words.every(word => searchableText.includes(word));
       })
@@ -68,7 +63,6 @@ export default function HomePage() {
       
       <div className="pt-16 pb-20">
         
-        {/* HERO SECTION WITH PHOTO SLIDER */}
         <Hero 
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
@@ -84,10 +78,8 @@ export default function HomePage() {
           }}
         />
 
-        {/* MAIN CONTENT AREA */}
         <div ref={resultsRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-20">
           
-          {/* HEADER & FILTERS */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
             <div>
               <h2 className="text-3xl font-bold mb-2">
@@ -108,7 +100,6 @@ export default function HomePage() {
             </div>
             
             <div className="flex flex-wrap items-center gap-4">
-              {/* Geolocation Button */}
               <button 
                 onClick={requestGeolocation} 
                 className={`text-sm flex items-center gap-2 px-4 py-2 rounded-full transition ${userLocation ? 'bg-[#4ADE80]/20 text-[#4ADE80]' : 'bg-[#1E1E1E] border border-white/10 text-gray-300 hover:bg-white/10'}`}
@@ -150,7 +141,6 @@ export default function HomePage() {
               ))}
             </div>
           ) : (
-            /* Empty state */
             <div className="flex flex-col items-center justify-center py-24 text-center">
               <div className="w-20 h-20 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
                 <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
