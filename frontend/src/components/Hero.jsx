@@ -10,11 +10,8 @@ export default function Hero({
   searchInputRef, 
   onQuickSearch 
 }) {
-  // Hero Slider Images Array
   const heroImages = [
-    '/images/Galle.png',
     '/images/Ella.png',
-    '/images/Mirissa.png',
     '/images/p1.jpg',
     '/images/p2.jpg',
     '/images/p3.jpg',
@@ -23,7 +20,6 @@ export default function Hero({
   
   const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
 
-  // Auto-advance hero slider every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeroIndex((prevIndex) => (prevIndex + 1) % heroImages.length);

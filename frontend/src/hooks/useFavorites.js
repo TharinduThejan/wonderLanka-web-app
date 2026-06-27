@@ -4,12 +4,14 @@ import { useState, useEffect } from 'react';
  * Custom hook to manage favorites state with localStorage persistence.
  */
 export default function useFavorites() {
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState(() => {
+    const storedFavs = JSON.parse(localStorage.getItem('travel_favorites')) || [];
+    return storedFavs;
+  });
 
   useEffect(() => {
-    const storedFavs = JSON.parse(localStorage.getItem('travel_favorites')) || [];
-    setFavorites(storedFavs);
-  }, []);
+    localStorage.setItem('travel_favorites', JSON.stringify(favorites));
+  }, [favorites]);
 
   const toggleFavorite = (e, id) => {
     e.stopPropagation();

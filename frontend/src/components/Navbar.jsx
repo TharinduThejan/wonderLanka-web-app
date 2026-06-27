@@ -1,20 +1,11 @@
-import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname;
-  const [navSearchQuery, setNavSearchQuery] = useState('');
 
-  const handleNavSearch = (e) => {
-    e.preventDefault();
-    const q = navSearchQuery.trim();
-    if (q) {
-      navigate(`/?q=${encodeURIComponent(q)}`);
-      setNavSearchQuery('');
-    }
-  };
+  
 
   return (
     <nav className="fixed w-full z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/10">
