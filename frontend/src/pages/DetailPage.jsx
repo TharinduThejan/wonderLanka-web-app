@@ -20,10 +20,8 @@ export default function DetailPage() {
 
   const selectedLocation = locationsData.find(loc => loc.id === id);
 
-  // Fetch live weather data asynchronously
   const { weatherData, isLoading, error } = useWeather(selectedLocation?.lat, selectedLocation?.lng);
 
-  // Open Google Maps directions once location is obtained
   useEffect(() => {
     if (pendingDirections && userLocation && selectedLocation) {
       const url = generateGoogleMapsUrl(selectedLocation, userLocation);
@@ -60,9 +58,8 @@ export default function DetailPage() {
   }
 
   const isFav = favorites.includes(selectedLocation.id);
-  
-  // Combine main image and gallery for the grid
-  const galleryImages = [
+
+  const galleryImages = [   
     selectedLocation.img, 
     ...(selectedLocation.gallery)
   ];
@@ -71,7 +68,6 @@ export default function DetailPage() {
     <div className="bg-[#121212] min-h-screen text-white font-sans antialiased selection:bg-[#4ADE80] selection:text-black overflow-x-hidden">
       <Navbar />
 
-      {/* 1. FULL WIDTH HERO HEADER */}
       <div className="relative w-full h-[60vh] min-h-[400px] mt-16">
         <img 
           src={selectedLocation.img} 
@@ -109,10 +105,8 @@ export default function DetailPage() {
         </div>
       </div>
 
-      {/* 2. MAIN CENTERED CONTENT (Description, Info, Grid) */}
       <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12 flex flex-col gap-12">
         
-        {/* Description */}
         <div className="prose prose-invert max-w-none">
           <h2 className="text-3xl font-bold text-[#4ADE80] mb-4">A Monument to Power and Beauty</h2>
           <p className="text-gray-300 leading-relaxed whitespace-pre-line text-lg">
@@ -122,7 +116,6 @@ export default function DetailPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           
-          {/* Live Weather Section */}
           <div className="bg-gradient-to-r from-[#1E1E1E] to-[#152018] border border-[#4ADE80]/20 p-6 rounded-3xl flex flex-col items-start justify-between gap-6 relative overflow-hidden group">
             <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-5 blur-xl group-hover:opacity-10 transition duration-700">
                <svg className="w-64 h-64 text-[#4ADE80]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.758a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" /></svg>
@@ -202,7 +195,6 @@ export default function DetailPage() {
 
         </div>
 
-        {/* Photo Gallery Grid Section */}
         <div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
             <h3 className="text-2xl font-bold text-white">Visual Gallery</h3>
@@ -239,10 +231,8 @@ export default function DetailPage() {
 
       </div>
 
-      {/* 3. FULL WIDTH EDGE-TO-EDGE MAP SECTION */}
       <div className="w-full bg-[#151515] border-t border-white/5 mt-8 pt-16">
         
-        {/* Map Header & Controls */}
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16 mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
           <div className="flex items-center gap-5">
             <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#4ADE80] to-[#22D3EE] flex items-center justify-center text-black shadow-lg">
@@ -279,7 +269,6 @@ export default function DetailPage() {
           </div>
         </div>
 
-        {/* 100% Width Iframe Block */}
         <div className="w-full h-[400px] md:h-[600px] bg-black relative border-y border-white/10">
           {showRoute && userLocation ? (
             <iframe
